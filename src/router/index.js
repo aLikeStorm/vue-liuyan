@@ -7,7 +7,7 @@ const router = new VueRouter({
         {path:'/',component:Home},
         {path:'/login',component:Login},
         {path:'/home',component:Home},
-        {path:'/detail',component:Detail}
+        {path:'/detail',component:Detail},
     ]
 })
 // //路由守卫控制访问权限
