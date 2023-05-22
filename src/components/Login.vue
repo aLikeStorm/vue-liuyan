@@ -22,7 +22,8 @@
               </el-form-item>
               <el-form-item class="flex items-center justify-center" >
                   <el-button @click="login" type="primary" class="mr-4" >登陆</el-button>
-                  <el-button  @click="resetLoginFrom" type="info" >重置</el-button>
+                  <!-- <el-button  @click="resetLoginFrom" type="info" >重置</el-button> -->
+                  <el-button @click="register" type="info" >注册</el-button>
               </el-form-item>
           </el-form>
       </el-col>
@@ -71,6 +72,9 @@ methods:{
       this.$router.push('/home');
 
     });
+  },
+  register(){
+    this.$router.push("/register")
   }
 }
 }

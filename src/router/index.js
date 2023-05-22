@@ -2,12 +2,14 @@ import VueRouter from "vue-router";
 import Login from "@/components/Login";
 import Home from "@/components/Home";
 import Detail from "@/components/Detail";
+import Register from "@/components/Register";
 const router = new VueRouter({
     routes:[
         {path:'/',component:Home},
         {path:'/login',component:Login},
         {path:'/home',component:Home},
         {path:'/detail',component:Detail},
+        {path:'/register',component:Register},
     ]
 })
 // //路由守卫控制访问权限
