@@ -85,6 +85,10 @@ export default {
       this.replyList = res.data.replyList
     },
     async onSubmit() {
+      if (this.messageFrom.message == null || this.messageFrom.message == ""||
+          this.messageFrom.topic == null || this.messageFrom.topic == "") {
+        return this.$message.error("主题或内容不能为空")
+      }
       const { data: res } = await this.$http.post("/message//addReply/" + this.mid + "/" + this.isEmail, this.messageFrom)
       if (!res.success) return this.$message.error(res.errorMsg);
       this.$message.success("添加留言成功");

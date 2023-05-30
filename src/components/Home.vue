@@ -104,9 +104,13 @@ export default {
       this.announcement = res.data;
     },
     async onSubmit() {
+      if (this.messageFrom.message == null || this.messageFrom.message == ""||
+        this.messageFrom.topic == null || this.messageFrom.topic == "") {
+        return this.$message.error("主题或内容不能为空")
+      }
       var token = sessionStorage.getItem("token");
       if (token == null) {
-        this.$message.error("游客无法添加留言");
+        return this.$message.error("游客无法添加留言");
       }
       const { data: res } = await this.$http.post('/message/add', this.messageFrom)
       if (!res.success) return this.$message.error(res.errorMsg);

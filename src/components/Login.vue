@@ -61,6 +61,11 @@ methods:{
   },
   login() {
     //进行表单预验证根据校验规则进行预验证
+    if (this.user.username == null || this.user.username == ""
+        ||this.user.password == null || this.user.password == "") {
+      this.$message.error("用户名或者密码不能为空")
+      return
+    }
     this.$refs.loginFromRef.validate(async valid=>{
       //验证不成功
       if (!valid)return;
